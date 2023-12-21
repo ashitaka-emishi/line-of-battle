@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import turnImg from '../assets/images/turn-record.jpg';
 
 const turn = ref();
 const day = ref(0);
@@ -36,7 +35,7 @@ img.onload = function() {
   isImageLoaded = true;
   drawTurnRecord();
 };
-img.src = turnImg;
+img.src = "public/images/turn-record.jpg";
 
 onMounted(() => {
   isMounted = true;
@@ -153,9 +152,12 @@ function drawTurnRecord() {
 </script>
 
 <template>
-    <!--button @click="nextTurn()">Next Turn</button -->
+    <button @click="nextTurn()">Next Turn</button>
     <canvas ref="turn"></canvas>
 </template>
 
 <style scoped>
+  canvas {
+    height: 100%;
+  }
 </style>
